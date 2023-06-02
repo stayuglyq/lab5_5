@@ -39,6 +39,11 @@ jobs:
         ./tests
         lcov -t "banking" -o lcov.info -c -d .
         
+      - name: npm install, make test-coverage
+        run: |
+        npm install
+        make test-coverage
+        
     - name: Coveralls
       uses: coverallsapp/github-action@master
       with:
